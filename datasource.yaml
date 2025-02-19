@@ -1,0 +1,19 @@
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDatasource
+metadata:
+  name: kirilldata
+  namespace: default
+spec:
+  instanceSelector:
+    matchLabels:
+      dashboards: grafana-deployment
+  allowCrossNamespaceImport: true
+  datasource:
+    access: proxy
+    database: prometheus
+    jsonData:
+      timeInterval: 5s
+      tlsSkipVerify: true
+    name: kirilldata
+    type: prometheus
+    url:  http://localhost:9090/

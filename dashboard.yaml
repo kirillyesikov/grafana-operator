@@ -1,0 +1,15 @@
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDashboard
+metadata:
+  name: folder
+  namespace: default
+spec:
+  instanceSelector:
+    matchLabels:
+      dashboards: grafana-deployment
+  folder: "folder"
+  json: |
+    {
+      "title": "as-code dashboard",
+      "uid": "ascode"
+    } 
