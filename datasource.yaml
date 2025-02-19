@@ -1,12 +1,12 @@
 apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDatasource
 metadata:
-  name: kirilldata
+  name: prometheus
   namespace: default
 spec:
   instanceSelector:
     matchLabels:
-      dashboards: grafana-deployment
+      dashboards: "grafana"
   allowCrossNamespaceImport: true
   datasource:
     access: proxy
